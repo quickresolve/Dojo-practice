@@ -9,5 +9,17 @@
     <!-- load Dojo -->
     <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"
             data-dojo-config="async: true"></script>
+    <script>
+    require([
+      'dojo/dom',
+      'dojo/dom-construct'
+      // The first parameter to require is an array of module ids - identifiers for the modules you want to load
+    ], function (dom, domConstruct){
+      var greetingNode = dom.byId('greeting');
+      domConstruct.place('<em> Dojo!</em>', greetingNode);
+    });
+    // Second parameter to require is a callback function where you provide your code that makes use of the modules
+    // The AMD loader passes the modules as parameters to the callback function (in the same order as specified in the array)
+    </script>
 </body>
 </html>
